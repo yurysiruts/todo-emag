@@ -1,0 +1,15 @@
+<div class="mt-8"></div>
+<div class="flex justify-between">
+  <h2>List of completed todos!</h2>
+  <app-button [routerLink]="'/todo'" background="blue">Show all</app-button>
+</div>
+<main class="mt-4">
+  <ul *ngIf="(completedTodos$ | async)!.length > 0; else noTasks">
+    <li *ngFor="let todo of completedTodos$ | async">
+      <app-todo-item [todo]="todo"></app-todo-item>
+    </li>
+  </ul>
+  <ng-template #noTasks>
+    <p class="text-orange-600 text-center">No completed todos yet.</p>
+  </ng-template>
+</main>

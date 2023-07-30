@@ -1,0 +1,13 @@
+<div class="mt-8"></div>
+<div class="flex justify-between">
+  <h2>Todo list!</h2>
+  <app-button routerLink="completed" background="blue">Show only completed</app-button>
+</div>
+<app-todo-form></app-todo-form>
+<main class="mt-4">
+  <ul>
+    <li *ngFor="let todo of allTodos$ | async">
+      <app-todo-item [todo]="todo"></app-todo-item>
+    </li>
+  </ul>
+</main>

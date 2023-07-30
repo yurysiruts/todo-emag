@@ -1,0 +1,43 @@
+<form [formGroup]="todoForm" class="flex flex-col">
+  <label for="title" class="font-semibold">Title</label>
+  <input 
+    type="text" 
+    id="title"
+    name="title"
+    placeholder="Ex. read a book"
+    formControlName="title"
+    class="flex-1 outline-none border rounded-sm bg-slate-100 p-2"
+    [ngClass]="
+      isSubmitted && todoForm.controls['title'].invalid ? 
+      'border-red-600 focus:border-red-600' : 
+      'border-slate-200 focus:border-slate-500'
+    ">
+  <pre *ngIf="isSubmitted && todoForm.controls['title'].invalid" class="text-red-600 text-[14px]">Title is required</pre>
+  <label for="content" class="font-semibold mt-2">Content</label>
+  <textarea
+    type="text" 
+    id="content" 
+    name="content"
+    placeholder="Ex. start from page 120"
+    formControlName="content"
+    class="flex-1 outline-none border rounded-sm bg-slate-100 p-2"
+    [ngClass]="
+      isSubmitted && todoForm.controls['content'].invalid ? 
+      'border-red-600 focus:border-red-600' : 
+      'border-slate-200 focus:border-slate-500'
+    "
+  ></textarea>
+  <pre *ngIf="isSubmitted && todoForm.controls['content'].invalid" class="text-red-600 text-[14px]">Content is required</pre>
+  <div class="flex items-center mt-2">
+    <input 
+      type="checkbox" 
+      id="date" 
+      name="date"
+      formControlName="date"
+      class="mr-2">
+    <label for="date">Add date</label>
+  </div>
+  <div class="flex justify-center mt-2">
+    <app-button (click)="addTodo()">Add Todo</app-button>
+  </div>
+</form>

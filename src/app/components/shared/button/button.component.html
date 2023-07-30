@@ -1,0 +1,16 @@
+<button
+  [disabled]="disabled"
+  class="w-full flex justify-center items-center focus:outline-none font-bold py-2 px-8 rounded-sm text-sm lg:text-base cursor-pointer"
+  [ngClass]="{
+    'bg-gray-300 hover:bg-gray-300 active:bg-gray-300 cursor-default': disabled,
+    'bg-green-300 hover:bg-green-400 active:bg-green-600': background === 'green',
+    'bg-blue-300 hover:bg-blue-400 active:bg-blue-600': background === 'blue',
+    'bg-red-300 hover:bg-red-400 active:bg-red-600': background === 'red',
+    'text-black': color === 'black',
+    'text-white': color === 'white',
+    'text-gray-500': color === 'gray'
+  }"
+  [style.minWidth.px]="minWidth"
+>
+  <ng-content></ng-content>
+</button>
