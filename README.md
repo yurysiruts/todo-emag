@@ -2,6 +2,6 @@
 
 - Clone the code from github repo
 - Open downloaded file in your code editor
-- Run **npm install** command in terminal, make sure you are in the root level
+- Run **npm install** command in terminal, make sure you are at root level
 - Next run **ng serve** command
-- Open your terminal and visit http://localhost:4200/
+- Open your browser and visit http://localhost:4200/
